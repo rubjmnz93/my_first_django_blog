@@ -13,8 +13,6 @@ class PostListView(generic.ListView):
         return Post.objects.order_by('-published_date')
 
 
-"""
-def post_list(request):
-    posts = Post.objects.order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts':posts})
-"""
+class PostDetailView(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
